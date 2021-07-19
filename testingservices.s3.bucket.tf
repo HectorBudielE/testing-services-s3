@@ -85,7 +85,7 @@ resource "aws_s3_bucket" "testingservices" {
 }
 
 resource "aws_s3_bucket_policy" "testing-services-bucket-policy" {
-  bucket = "${aws_s3_bucket.pricingservices.bucket}"
+  bucket = "${aws_s3_bucket.testingservices.bucket}"
 
   policy = <<POLICY
 {
