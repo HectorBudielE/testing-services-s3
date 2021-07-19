@@ -27,8 +27,8 @@ variable "aws_account_id" {}
 ## AWS Account with Readonly Access
 ##---------------------------------
 variable "readonly_account_arns"{
-    type    = list
-    default = [""]
+    type    = "list"
+    default = []
 }
 
 ##############################
