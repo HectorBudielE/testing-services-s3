@@ -110,6 +110,21 @@ resource "aws_s3_bucket_policy" "testing-services-bucket-policy" {
                     "s3:x-amz-acl": "bucket-owner-full-control"
                 }
             }
+        },
+        {
+            "Sid": "AllowReadOnlyAccess",
+            "Effect" : "Allow",
+            "Principal": {
+                "AWS": ${local.readonly_account_arn_list}
+            },
+            "Action": [
+                "s3:List*",
+                "s3:Get*"
+            ],
+            "Resource": [
+                "arn:aws:s3:::${aws_s3_bucket.testingservices.bucket}",
+                "arn:aws:s3:::${aws_s3_bucket.testingservices.bucket}/*"
+            ]
         }
     ]
 }
