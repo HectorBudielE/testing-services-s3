@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "testingservices" {
-  bucket = "ha-${var.environment}-testing-services-${var.aws_region}"
+  bucket = "he-${var.environment}-testing-services-${var.aws_region}"
   acl = "private"
   force_destroy = "false"
   acceleration_status = "Enabled"
@@ -72,15 +72,8 @@ resource "aws_s3_bucket" "testingservices" {
   }
 
   tags {
-    Name = "${var.aws_region}-${var.environment}-testing-services"
     Env = "${var.environment}"
     Owner = "${var.owner}"
-    Service = "${var.service}"
-    Product = "${var.product}"
-    Portfolio = "${var.portfolio}"
-    AssetProtectionLevel = "99"
-    Brand = "HomeAway"
-    ComponentInfo = "adf44460-3976-4ace-8d08-194ede5a2342"
   }
 }
 
