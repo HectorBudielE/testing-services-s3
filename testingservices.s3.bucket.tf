@@ -115,7 +115,7 @@ resource "aws_s3_bucket_policy" "testing-services-bucket-policy" {
             "Sid": "AllowReadOnlyAccess",
             "Effect" : "Allow",
             "Principal": {
-                "AWS": ${local.readonly_account_arn_list}
+                "AWS": ${jsonencode(local.readonly_account_arn_list)}
             },
             "Action": [
                 "s3:List*",
