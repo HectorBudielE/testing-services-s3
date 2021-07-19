@@ -6,5 +6,5 @@ provider "aws" {
 
 locals {
     local_account_id_root     = "arn:aws:iam::${var.aws_account_id}:root"
-    readonly_account_arn_list = "${var.readonly_account_arns}" != [""] ? "${var.readonly_account_arns}" : ["${local.local_account_id_root}2]
+    readonly_account_arn_list = "${var.readonly_account_arns}" != [""] ? "${var.readonly_account_arns}" : ["${local.local_account_id_root}"]
 }
